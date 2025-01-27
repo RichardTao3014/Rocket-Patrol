@@ -73,13 +73,13 @@ class Play extends Phaser.Scene {
           this.ship03.update()
       } 
 
-        this.starfield.tilePositionX -= 4
+        this.starfield.tilePositionX -= 3
 
-        this.p1Rocket.update();             // update p1
+        // this.p1Rocket.update();             // update p1
 
-        this.ship01.update()               // update spaceships (x3)
-        this.ship02.update()
-        this.ship03.update()
+        // this.ship01.update()               // update spaceships (x3)
+        // this.ship02.update()
+        // this.ship03.update()
 
         // check collisions
         if(this.checkCollision(this.p1Rocket, this.ship03)) {
@@ -125,10 +125,10 @@ class Play extends Phaser.Scene {
           ship.reset()                       // reset ship position
           ship.alpha = 1                     // make ship visible again
           boom.destroy()                     // remove explosion sprite
-          this.sound.play('sfx-explosion')
         })
         // score add and text update
         this.p1Score += ship.points
-        this.scoreLeft.text = this.p1Score       
+        this.scoreLeft.text = this.p1Score
+        this.sound.play('sfx-explosion')       
       }
 }
